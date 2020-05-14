@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto8
+  build:
+    commands:
+      - java -version
+      - wget http://mirror.olnevhost.net/pub/apache/maven/binaries/apache-maven-3.0.5-bin.tar.gz
+      - tar xvf apache-maven-3.0.5-bin.tar.gz
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'target/my-web-app'
+
+or base-directory: 'target/*'
